@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<header>
+
+    <div class="flex items-center content-center gap-3">
+        <Image src="https://w7.pngwing.com/pngs/347/511/png-transparent-dentistry-dent-love-white-face-thumbnail.png" alt="Dentrix" width="30" height="20" />
+        <h2 class="text-2xl">Dentix</h2>
+    </div>
+
+    <nav>
+        <ul class="flex items-center content-center gap-3">
+            <li>
+                <a href="#" class="text-xl">Inicio</a>
+            </li>
+            <li>
+                <a href="#" class="text-xl">Sobre nosotros</a>
+            </li>
+            <li>
+                <a href="#" class="text-xl">Contactar</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+<style>
+    header{
+        width: 80%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background: var(--color-principal);
+        margin: 0 auto;
+    }
+</style>
