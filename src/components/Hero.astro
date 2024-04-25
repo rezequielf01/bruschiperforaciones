@@ -1,25 +1,59 @@
 ---
 import { Image } from 'astro:assets';
+
 ---
 
-<section class="w-100 m-auto">
-    <div class="container w-100 bg-red flex items-center justify-between gap-10">
+<section class="w-100 my-10 mx-auto">
+    <div class="container m-auto w-100 bg-red flex items-center justify-between gap-10">
         <div class="flex flex-col w-50 bg-white">
-            <h1 class="xl:text-4xl">Lorem ipsum dolor sit amet.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis libero nostrum pariatur ipsam rerum numquam.</p>
-            <div>
-                <a href="#">INSTAGRAM</a>
-                <a href="#">Servicios</a>
+            <h1 class="text-5xl font-normal">Clínica odontologica</h1>
+            <p class="my-5 font-light text-xl">Cónoce nuestra clínica dental. Solicita una cita sin compromiso y te asesoramos. Nuestro equipo profesional se encargará de que te sientas como en casa.</p>
+            <div class="flex gap-5">
+                <a class="button color-primario" href="#servicios">
+                    <ion-icon class="text-2xl" name="logo-instagram"></ion-icon>
+                    Instagram
+                </a>
+                <a class="button color-secondary" href="#servicios">
+                    <ion-icon class="text-2xl"  name="color-wand-outline"></ion-icon>
+                    Nuestros servicios
+                </a>
             </div>
         </div>
-        <div class="flex w-50 bg-black">
-            <Image src="https://static.wixstatic.com/media/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg" alt="Dentrix" width="100" height="350" />
+        <div class="flex w-100 bg-black">
+            <Image class="img-hero" src="https://static.wixstatic.com/media/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg" alt="Dentrix" width="100" height="100" />
         </div>
     </div>
 </section>
 
 <style>
+    
     section{
         width: 80%;
+    }
+    .img-hero{
+        width: 100%;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+    .button {
+        display: flex;
+        width: fit-content;
+        gap: 10px;
+        padding: 0.75rem 1rem;
+        font-weight: 400;
+        text-decoration: none;
+        text-align: center;
+        color: var(--neutral-900);
+        background-color: var(--color-principal);
+        border-radius: 3px;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+    .button.color-secondary{
+        background-color: transparent;
+        border: solid 1px black;
+    }
+    .button.color-secondary:hover, .button.color-secondary:focus {
+        border-color: var(--color-principal);
+        color: var(--color-principal);
+        box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
     }
 </style>

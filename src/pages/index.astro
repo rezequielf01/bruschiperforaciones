@@ -2,12 +2,55 @@
 // NOTA - ACA CODIGO JS
 
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ContactCard from '../components/ContactCard.astro';
 ---
 
 <Layout title="Dentix - Clínica odontologica">
 	<Hero />
+
+	<section class="w-4/5 m-auto my-50 scroll-mt-3" id="servicios">
+
+		<div class="container">
+
+		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
+			<div class="flex flex-col w-2/4 my-auto gap-5">
+				<h2 id="entrada" class="text-4xl lg:text-2xl font-bold">Blanqueamiento dental</h2>
+				<p class="text-base lg:text-lg font-normal mt-0">
+				  Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br><br>Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
+				</p>
+				<a class="button-info flex items-center justify-start gap-1" href="#">Más informacion <ion-icon name="arrow-forward-outline"></ion-icon></a>
+			</div>
+		  </ServiceCard>
+
+		  <ServiceCard class="services-card__img" imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
+			<div class="flex flex-col w-2/4 my-auto gap-5">
+				<h2 class="text-4xl lg:text-2xl font-bold">Tratamiento de caries</h2>
+				<p class="text-base lg:text-lg font-normal">
+				  Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br><br>  Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
+				</p>
+			</div>
+		  </ServiceCard>
+
+		  <ServiceCard imgSrc="https://images.squarespace-cdn.com/content/v1/59303b953e00bebc0feaff9f/d6df1776-ac35-4094-b353-e4d9b9087682/ortodoncia-clinica-dental-murcia.jpeg">
+			<div class="flex flex-col w-2/4 my-auto gap-5">
+				<h2 class="text-4xl lg:text-2xl font-bold">Ortodoncia</h2>
+				<p class="text-base lg:text-lg font-normal">
+				  Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br><br> Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
+				</p>
+			</div>
+		  </ServiceCard>
+
+		</div>
+	  </section>
+
+	  <ContactCard />
+	  
+	  <div class="w-4/5 mx-auto">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.096523412659!2d-58.457139!3d-34.62700100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca25d67b4663%3A0x22b9412d53caddca!2sAv.%20Rivadavia%206444%2C%20C1406GLU%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713988353828!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	  </div>
 </Layout>
 
 <style>

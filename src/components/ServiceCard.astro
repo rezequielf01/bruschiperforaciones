@@ -1,0 +1,29 @@
+---
+const { imgSrc, reverseImg = false } = Astro.props
+---
+
+<section class="xl:my-64 lg:my-30 md:my-15 sm:my-20">
+    <div class="container">
+      <div class="flex gap-24 md:grid-cols-2 md:gap-10 sm:gap-5">
+        <div class="space-content p-5 flex justify-center gap-10">
+            {!reverseImg ? <img class="service-card__img rounded-lg xl:h-auto lg:h-full md:h-3/4 md:m-auto" src={imgSrc} /> : ''}
+          <slot />
+            {reverseImg ? <img class="service-card__img rounded-lg xl:h-auto lg:h-full md:h-3/4 md:m-auto" src={imgSrc} /> : ''}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .service-card__img{
+        width: 50%;
+        height: 400px;
+    }
+    .space-content{
+      transition: all 0.2s ease-in-out;
+      border-radius: 5px;
+    }
+    .space-content:hover{
+      
+    }
+  </style>
