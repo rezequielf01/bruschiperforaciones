@@ -1,27 +1,38 @@
 ---
 // NOTA - ACA CODIGO JS
-
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ContactCard from '../components/ContactCard.astro';
+
 ---
 
 <Layout title="Dentix - Clínica odontologica">
 	<Hero />
 
-	<section class="w-4/5 m-auto my-50 scroll-mt-3" id="servicios">
+	<section class="w-full m-auto mt-56 p-32" id="nosotros">
+		<div class="nosotros-container container text-white w-full text-center">
+			<span class="text-5xl font-normal"><strong class="font-semibold">Somos Dentix</strong><br>donde la excelencia en odontología es nuestra prioridad</span>
+			<p class="text-2xl font-light">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
+		</div>
+	</section>
 
-		<div class="container">
+	<section class="w-4/5 m-auto my-36" id="servicios">
 
+		<div class="servicios-title flex flex-col mb-10 w-1/4 mx-auto">
+			<h3 class="text-3xl text-center font-semibold">Nuestros servicios</h3>
+			<span class="linea-separador bg-black"></span>
+		</div>
+
+		<div class="container my-0">
 		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
 			<div class="flex flex-col w-2/4 my-auto gap-5">
 				<h2 id="entrada" class="text-4xl lg:text-2xl font-bold">Blanqueamiento dental</h2>
 				<p class="text-base lg:text-lg font-normal mt-0">
 				  Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br><br>Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
 				</p>
-				<a class="button-info flex items-center justify-start gap-1" href="#">Más informacion <ion-icon name="arrow-forward-outline"></ion-icon></a>
+				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
 			</div>
 		  </ServiceCard>
 
@@ -31,6 +42,7 @@ import ContactCard from '../components/ContactCard.astro';
 				<p class="text-base lg:text-lg font-normal">
 				  Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br><br>  Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
 				</p>
+				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
 			</div>
 		  </ServiceCard>
 
@@ -40,6 +52,7 @@ import ContactCard from '../components/ContactCard.astro';
 				<p class="text-base lg:text-lg font-normal">
 				  Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br><br> Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
 				</p>
+				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
 			</div>
 		  </ServiceCard>
 
@@ -47,10 +60,6 @@ import ContactCard from '../components/ContactCard.astro';
 	  </section>
 
 	  <ContactCard />
-	  
-	  <div class="w-4/5 mx-auto">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.096523412659!2d-58.457139!3d-34.62700100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca25d67b4663%3A0x22b9412d53caddca!2sAv.%20Rivadavia%206444%2C%20C1406GLU%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1713988353828!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-	  </div>
 </Layout>
 
 <style>
@@ -109,5 +118,46 @@ import ContactCard from '../components/ContactCard.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+
+	.linea-separador{
+		width: 25%;
+		height: 7px;
+		margin: auto;
+		border-radius: 10px;
+		background-color: var(--color-secondary);
+		transition: all .2s ease-in-out;
+	}
+
+	.servicios-title:hover .linea-separador{
+		width: 50%;
+	}
+	#nosotros{
+		color: white;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                  url("https://www.deltadental.com/content/dam/new-grin-magazine/ddpa/en/2023/fall/man-at-the-dentist-1200x683.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		backdrop-filter: blur(1rem);
+	}
+	.nosotros-container{
+		transition: all .2s ease-in-out;
+	}
+	.nosotros-container:hover{
+		color: var(--color-principal);
+	}
+
+	.button-info{
+		border: solid 1px var(--color-secondary);
+		background: var(--color-secondary);
+		color: white;
+		box-shadow: 0 0 2px var(--color-secondary);
+		transition: all .2s ease-in-out;
+	}
+	.button-info:hover{
+		background: rgb(224, 0, 94);
+		box-shadow: 0 0 2px rgb(224, 0, 94);
 	}
 </style>

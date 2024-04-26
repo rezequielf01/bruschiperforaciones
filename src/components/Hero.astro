@@ -3,17 +3,17 @@ import { Image } from 'astro:assets';
 
 ---
 
-<section class="w-100 my-10 mx-auto">
+<section class="w-100 my-20 mx-auto">
     <div class="container m-auto w-100 bg-red flex items-center justify-between gap-10">
         <div class="flex flex-col w-50 bg-white">
             <h1 class="text-5xl font-normal">Clínica odontologica</h1>
             <p class="my-5 font-light text-xl">Cónoce nuestra clínica dental. Solicita una cita sin compromiso y te asesoramos. Nuestro equipo profesional se encargará de que te sientas como en casa.</p>
             <div class="flex gap-5">
-                <a class="button color-primario" href="#servicios">
+                <a class="button color-primario" title="Instagram"  href="#servicios">
                     <ion-icon class="text-2xl" name="logo-instagram"></ion-icon>
                     Instagram
                 </a>
-                <a class="button color-secondary" href="#servicios">
+                <a class="button color-secondary" title="Nuestros servicios"  href="#servicios">
                     <ion-icon class="text-2xl"  name="color-wand-outline"></ion-icon>
                     Nuestros servicios
                 </a>
@@ -52,8 +52,8 @@ import { Image } from 'astro:assets';
         border: solid 1px black;
     }
     .button.color-secondary:hover, .button.color-secondary:focus {
-        border-color: var(--color-principal);
-        color: var(--color-principal);
+        border-color: var(--color-secondary);
+        color: var(--color-secondary);
         box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
     }
 </style>
