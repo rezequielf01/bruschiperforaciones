@@ -11,25 +11,25 @@ import ContactCard from '../components/ContactCard.astro';
 <Layout title="Dentix - Clínica odontologica">
 	<Hero />
 
-	<section class="w-full m-auto mt-56 p-32" id="nosotros">
+	<section class="w-full m-auto xl:mt-56 lg:mt-40 xl:p-32 lg:p-10" id="nosotros">
 		<div class="nosotros-container container text-white w-full text-center">
-			<span class="text-5xl font-normal"><strong class="font-semibold">Somos Dentix</strong><br>donde la excelencia en odontología es nuestra prioridad</span>
-			<p class="text-2xl font-light">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
+			<span class="text-5xl nosotros-span font-normal xl:text-4xl lg:text-3xl lg:font-medium"><strong class="nosotros-strong xl:font-bold lg:font-semibold text-white">Dentix</strong></span>
+			<p class="xl:text-2xl lg:text-lg xl:font-light lg:leading-6 lg:font-normal">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
 		</div>
 	</section>
 
-	<section class="w-4/5 m-auto my-36" id="servicios">
+	<section class="w-4/5 lg:w-full m-auto my-36" id="servicios">
 
-		<div class="servicios-title flex flex-col mb-10 w-1/4 mx-auto">
-			<h3 class="text-3xl text-center font-semibold">Nuestros servicios</h3>
+		<div class="servicios-title flex flex-col xl:mb-10 lg:mb-3 xl:w-1/4 lg:w-2/4 mx-auto">
+			<h3 class="xl:text-3xl lg:text-2xl text-center font-semibold lg:font-bold">Nuestros servicios</h3>
 			<span class="linea-separador bg-black"></span>
 		</div>
 
-		<div class="container my-0">
+		<div class="container my-0 mx-auto">
 		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
-			<div class="flex flex-col w-2/4 my-auto gap-5">
-				<h2 id="entrada" class="text-4xl lg:text-2xl font-bold">Blanqueamiento dental</h2>
-				<p class="text-base lg:text-lg font-normal mt-0">
+			<div class="flex flex-col w-2/4 my-auto xl:gap-5 lg:gap-3">
+				<h2 id="entrada" class="text-4xl lg:text-xl font-bold">Blanqueamiento dental</h2>
+				<p class="text-base lg:text-md lg:leading-6 font-normal mt-0">
 				  Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br><br>Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
 				</p>
 				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
@@ -37,9 +37,9 @@ import ContactCard from '../components/ContactCard.astro';
 		  </ServiceCard>
 
 		  <ServiceCard class="services-card__img" imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
-			<div class="flex flex-col w-2/4 my-auto gap-5">
-				<h2 class="text-4xl lg:text-2xl font-bold">Tratamiento de caries</h2>
-				<p class="text-base lg:text-lg font-normal">
+			<div class="flex flex-col w-2/4 my-auto xl:gap-5 lg:gap-3">
+				<h2 class="text-4xl lg:text-xl font-bold">Tratamiento de caries</h2>
+				<p class="text-base lg:text-md font-normal lg:leading-6">
 				  Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br><br>  Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
 				</p>
 				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
@@ -47,9 +47,9 @@ import ContactCard from '../components/ContactCard.astro';
 		  </ServiceCard>
 
 		  <ServiceCard imgSrc="https://images.squarespace-cdn.com/content/v1/59303b953e00bebc0feaff9f/d6df1776-ac35-4094-b353-e4d9b9087682/ortodoncia-clinica-dental-murcia.jpeg">
-			<div class="flex flex-col w-2/4 my-auto gap-5">
-				<h2 class="text-4xl lg:text-2xl font-bold">Ortodoncia</h2>
-				<p class="text-base lg:text-lg font-normal">
+			<div class="flex flex-col w-2/4 my-auto xl:gap-5 lg:gap-3">
+				<h2 class="text-4xl lg:text-xl font-bold">Ortodoncia</h2>
+				<p class="text-base lg:text-md font-normal lg:leading-6">
 				  Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br><br> Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
 				</p>
 				<a class="button-info flex items-center justify-start gap-1 burt px-3 py-1 w-fit" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
@@ -144,8 +144,12 @@ import ContactCard from '../components/ContactCard.astro';
 	}
 	.nosotros-container{
 		transition: all .2s ease-in-out;
+		color: white;
 	}
 	.nosotros-container:hover{
+		color: var(--color-principal);
+	}
+	.nosotros-strong{
 		color: var(--color-principal);
 	}
 

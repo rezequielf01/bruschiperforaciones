@@ -27,7 +27,11 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	<body>
 
 		<Header/>
+
 			<main id="main-content" transition:animate="fade">
+				<div id="nav-mobile" class="nav-mobile w-full sm:h-80 sm:fixed bg-black">
+					<h1>sd</h1>
+				</div>
 				<slot />
 			</main>
 			
@@ -72,5 +76,14 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	.nav-mobile{
+		z-index: 500;
+		top: -400px;
+		background: silver;
+		transition: all .3s ease-in-out;
+	}
+	.nav-hidden{
+		top: 100px;
 	}
 </style>

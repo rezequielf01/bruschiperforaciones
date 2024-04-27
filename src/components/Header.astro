@@ -1,53 +1,51 @@
 ---
 import { Image } from 'astro:assets';
+import Nav from '../components/Nav.astro';
 ---
 
-<header>
+<header class="xl:w-4/5 xl:mx-auto lg:shadow-none md:shadow-lg lg:w-full flex items-center justify-between lg:relative sm:fixed sm:top-0 sm:left-0 sm:w-full">
 
     <a href="/" title="Inicio" class="flex items-center content-center gap-3">
         <Image src="https://w7.pngwing.com/pngs/347/511/png-transparent-dentistry-dent-love-white-face-thumbnail.png" alt="Dentrix" width="30" height="20" />
-        <h2 class="text-2xl">Dentix</h2>
+        <h2 class="xl:text-2xl lg:text-lg lg:font-normal">Dentix</h2>
     </a>
 
-    <nav class="flex">
-        <ul class="flex items-center content-center gap-3">
-            <li>
-                <a href="#" title="Inicio"  class="text-xl">Inicio</a>
-            </li>
-            <li>
-                <a href="/#nosotros" title="Sobre nosotros"  class="text-xl">Sobre nosotros</a>
-            </li>
-            <li>
-                <a href="/#contacto" title="Contactár"  class="text-xl">Contactar</a>
-            </li>
-        </ul>
-        <button class="menu-burger" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-            <svg class="lg:hidden" width="35" height="35" viewBox="0 0 100 100">
+    <div class="flex">
+
+        <Nav />
+        
+        <button class="menu-burguer lg:hidden sm:flex" id="menu-burguer" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+            <svg width="40" height="40" viewBox="0 0 100 100">
               <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
               <path class="line line2" d="M 20,50 H 80" />
               <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
             </svg>
-        </button>
-    </nav>
+          </button>
+
+    </div>
 
 
 </header>
 
+<script>
+    let btn = document.getElementById('menu-burguer');
+    let navMobile = document.getElementById("nav-mobile");
+    btn?.addEventListener('click', function() {
+        navMobile?.classList.toggle("nav-hidden");
+    });
+</script>
+
 <style>
     header{
-        width: 80%;
         height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         padding: 10px 20px;
-        margin: 0 auto;
+        z-index: 1000;
+        background: white;
     }
-    .menu-burger {
+    .menu-burguer {
         background-color: transparent;
         border: none;
         cursor: pointer;
-        display: flex;
         padding: 0;
     }
     .line {
