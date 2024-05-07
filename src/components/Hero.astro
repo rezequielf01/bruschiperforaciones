@@ -3,13 +3,13 @@ import { Image } from 'astro:assets';
 
 ---
 
-<section class="w-full xl:my-24 lg:w-11/12 lg:mx-auto md:mt-44 md:w-11/12 md:mx-auto">
-    <div class="container m-auto w-full bg-red flex items-center justify-between lg:gap-10 sm:gap-5">
+<section class="w-full xl:my-24 sm:mt-36 sm:mb-20 lg:w-11/12 lg:mx-auto md:mt-44 sm:w-11/12 sm:mx-auto">
+    <div class="md:m-auto sm:w-full bg-red flex items-center justify-between lg:gap-10 sm:gap-5">
         <div class="flex flex-col w-50 lg:w-3/5 bg-white">
-            <h1 class="xl:text-5xl lg:text-4xl xl:font-normal md:font-bold md:text-2xl">Clínica odontologica</h1>
+            <h1 class="xl:text-5xl lg:text-4xl xl:font-normal sm:font-semibold sm:text-2xl">Clínica odontologica</h1>
             <p class="lg:my-5 md:my-4 xl:font-light xl:text-xl lg:text-lg lg:font-normal lg:leading-6">Cónoce nuestra clínica dental. Solicita una cita sin compromiso y te asesoramos. Nuestro equipo profesional se encargará de que te sientas como en casa.</p>
-            <div class="flex lg:gap-5 md:gap-3">
-                <a class="button lg:text-lg lg:font-ligth sm:text-sm sm:gap-1 sm:py-2 sm:px-3 color-primario" title="Instagram"  href="#servicios">
+            <div class="flex lg:gap-5 sm:gap-3 sm:mt-2">
+                <a class="button lg:text-lg flex items-center lg:font-ligth sm:text-sm sm:gap-1 sm:py-2 sm:px-3 color-primario" title="Instagram"  href="#servicios">
                     <ion-icon class="lg:text-2xl md:text-xl" name="logo-instagram"></ion-icon>
                     Instagram
                 </a>
@@ -19,7 +19,7 @@ import { Image } from 'astro:assets';
                 </a>
             </div>
         </div>
-        <div class="flex w-50 lg:w-2/5 bg-black">
+        <div class="flex w-50 lg:w-2/5 bg-black md:block sm:hidden">
             <Image class="img-hero" src="https://static.wixstatic.com/media/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg" alt="Dentrix" width="100" height="100" />
         </div>
     </div>
