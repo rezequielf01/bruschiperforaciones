@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
 interface Props {
 	title: string;
 }
@@ -28,9 +29,15 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 
 		<Header/>
 
+			<a href="#" id="wsp-float-btn" title="Whatsapp">
+				<ion-icon name="logo-whatsapp"></ion-icon>
+			</a>
+
 			<main id="main-content" transition:animate="fade">
 				<div id="nav-mobile" class="nav-mobile w-full sm:h-80 sm:fixed bg-black">
-					<h1>sd</h1>
+					<div class="flex flex-col">
+						<Nav />
+					</div>
 				</div>
 				<slot />
 			</main>
@@ -79,10 +86,50 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	.nav-mobile{
 		z-index: 500;
 		top: -400px;
-		background: silver;
+		background: rgb(245, 245, 245);
+		box-shadow: 0 0 5px black;
 		transition: all .3s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.nav-hidden{
 		top: 100px;
 	}
+	#wsp-float-btn{
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		position: fixed;
+		bottom: 25px;
+		right: 25px;
+		background: #25d366;
+		z-index: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 1.5rem;
+		transition: all .2s ease-in-out;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	}
+	#wsp-float-btn:hover{
+		background: white;
+		color: #25d366;
+	}
+
+	@media (max-width: 426px) { 
+        #wsp-float-btn{
+			bottom: 15px;
+			right: 15px;
+		}
+		.nav-hidden{
+			top: 80px;
+		}
+    }
+	@media (min-width: 1023px) { 
+        .nav-mobile{
+			display: none;
+		}
+    } 
 </style>

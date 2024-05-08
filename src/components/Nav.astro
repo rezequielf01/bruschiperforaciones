@@ -1,16 +1,46 @@
 ---
 ---
 
-<nav class="lg:block sm:hidden">
-    <ul class="flex items-center content-center gap-4">
+<nav class="">
+    <ul class="flex lg:flex-row sm:flex-col items-center content-center gap-4 sm:gap-5">
         <li>
-            <a href="/" title="Inicio"  class="text-xl">Inicio</a>
+            <a href="/" title="Inicio"  class="text-xl flex flex-col items-center justify-center gap-0">Inicio
+                <span class="nav__span"></span>
+            </a>
         </li>
-        <li>
-            <a href="/#nosotros" title="Sobre nosotros"  class="text-xl">Sobre nosotros</a>
+        <li class="flex flex-col items-center justify-center gap-0">
+            <a href="/#nosotros" title="Sobre nosotros"  class="text-xl flex flex-col items-center justify-center gap-0">Sobre nosotros
+                <span class="nav__span"></span>
+            </a>
+        
         </li>
-        <li>
-            <a href="/#contacto" title="Contactár"  class="text-xl">Contactar</a>
+        <li class="flex flex-col items-center justify-center gap-0">
+            <a href="/#contacto" title="Contactár"  class="text-xl flex flex-col items-center justify-center gap-0">Contactar
+                <span class="nav__span"></span>
+            </a>
         </li>
     </ul>
 </nav>
+
+<style>
+    nav ul li{
+        width: fit-content;
+    }
+    .nav__span{
+        width: 0;
+        background: var(--color-principal);
+        height: 3px;
+        border-radius: 2px;
+        transition: all .2s ease-in-out;
+    }
+    nav ul li:hover .nav__span{
+        width: 90%;
+    }
+    nav ul li a{
+        transition: color .2s ease-in-out;
+    }
+    nav ul li a:hover{
+        color: var(--color-principal);
+    }
+    
+</style>

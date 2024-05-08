@@ -5,20 +5,37 @@ import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ContactCard from '../components/ContactCard.astro';
+import WorkerCard from '../components/WorkerCard.astro';
 
 ---
 
 <Layout title="Dentix - Clínica odontologica">
 	<Hero />
 
-	<section class="w-full m-auto xl:mt-56 lg:mt-40 md:mt-24 sm:mb-24 xl:p-32 lg:p-10" id="nosotros">
-		<div class="nosotros-container text-white w-full md:p-10 sm:p-5 text-center sm:w-full">
+	<section class="w-full m-auto xl:mt-32 xl:mb-0 lg:mt-40 md:mt-24 sm:mb-24 xl:p-0 lg:p-10 relative" id="nosotros">
+		<div class="nosotros-container text-white w-full md:p-10 xl:p-24 sm:p-5 text-center sm:w-full relative">
 			<span class="text-5xl nosotros-span font-normal xl:text-4xl lg:text-3xl lg:font-medium"><strong class="nosotros-strong xl:font-bold lg:font-semibold sm:text-2xl text-white">Somos Dentix</strong></span>
 			<p class="xl:text-2xl lg:text-lg xl:font-light lg:leading-6 sm:leading-5 lg:font-normal sm:font-light">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
 		</div>
+		<div class="nosotros-container2 w-full flex items-center justify-center gap-20 relative bottom-12">
+			<WorkerCard imgSrc="https://gacetadental.com/wp-content/uploads/2019/04/shutterstock_Nestor-Rizhniak.jpg">
+				<span class="text-center">Dentista</span>
+				<h3 class="font-semibold text-center">Loremds ipsum</h3>
+			</WorkerCard>
+
+			<WorkerCard imgSrc="https://www.campustraining.es/wp-content/uploads/2021/02/auxiliar-odontologia-requisitos-articulo.jpg.webp">
+				<span class="text-center">Dentista</span>
+				<h3 class="font-semibold text-center">Loremds ipsum</h3>
+			</WorkerCard>
+
+			<WorkerCard imgSrc="https://merida.anahuac.mx/hubfs/POSEC%20-%20Educon%20-%20MAES%20%202023/POSEC%20-%20Educon%202023/Web_Imagenes_Actualizacion-Odontologia-General_Imagen2.jpg">
+				<span class="text-center">Dentista</span>
+				<h3 class="font-semibold text-center">Loremds ipsum</h3>
+			</WorkerCard>
+		</div>
 	</section>
 
-	<section class="w-4/5 lg:w-full sm:w-11/12 m-auto lg:my-36 md:mt-24" id="servicios">
+	<section class="container w-4/5 lg:w-full sm:w-11/12 m-auto xl:mt-0 lg:my-36 md:mt-24" id="servicios">
 
 		<div class="servicios-title flex flex-col xl:mb-10 lg:mb-3 xl:w-1/4 lg:w-2/4 mx-auto">
 			<h3 class="xl:text-3xl sm:text-2xl text-center font-semibold lg:font-bold">Nuestros servicios</h3>
@@ -36,7 +53,7 @@ import ContactCard from '../components/ContactCard.astro';
 			</div>
 		  </ServiceCard>
 
-		  <ServiceCard class="services-card__img" imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
+		  <ServiceCard imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
 			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
 				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-bold">Tratamiento de caries</h2>
 				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
@@ -136,6 +153,10 @@ import ContactCard from '../components/ContactCard.astro';
 		width: 50%;
 	}
 	#nosotros{
+		color: black;
+	}
+	.nosotros-container{
+		transition: all .2s ease-in-out;
 		color: white;
 		background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
                   url("https://www.deltadental.com/content/dam/new-grin-magazine/ddpa/en/2023/fall/man-at-the-dentist-1200x683.png");
@@ -144,10 +165,6 @@ import ContactCard from '../components/ContactCard.astro';
 		background-size: cover;
 		background-attachment: fixed;
 		backdrop-filter: blur(1rem);
-	}
-	.nosotros-container{
-		transition: all .2s ease-in-out;
-		color: white;
 	}
 
 	.button-info{

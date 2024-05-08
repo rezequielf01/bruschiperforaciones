@@ -3,7 +3,7 @@ const { imgSrc, reverseImg = false } = Astro.props
 ---
 
 <section>
-    <div class="">
+    <div class="flex">
       <div class=" flex gap-24 md:grid-cols-2 md:gap-10 sm:gap-5 sm:w-full">
         <div class="space-content container-box lg:p-5 sm:p-0 flex lg:flex-row sm:flex-col justify-center gap-10 my-10">
             {!reverseImg ? <img class="service-card__img rounded-lg xl:h-auto lg:h-full md:h-3/4 md:m-auto" src={imgSrc} /> : ''}
@@ -17,11 +17,10 @@ const { imgSrc, reverseImg = false } = Astro.props
   <style>
     .container-box{
       display: flex;
-      flex-direction: column;
-      gap: 5px;
+      flex-direction: row;
+      gap: 15px;
       padding: 20px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-      border-radius: 5px;
     }
     .service-card__img{
         width: 50%;
@@ -47,10 +46,20 @@ const { imgSrc, reverseImg = false } = Astro.props
         height: 250px;
         width: 100%;
       }
+      .container-box{
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 5px;
+      }
     }
     @media (max-width: 426px) { 
       .service-card__img{
         height: 200px;
+      }
+      .container-box{
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 5px;
       }
     }  
   </style>
