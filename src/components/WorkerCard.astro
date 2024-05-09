@@ -21,7 +21,7 @@ const { imgSrc } = Astro.props
         justify-content: space-around;
     }
     .card-img{
-        width: 75%;
+        width: 70%;
         height: 50%;
     }
     .card-img__img{
@@ -32,5 +32,39 @@ const { imgSrc } = Astro.props
     }
     .card-description{
         padding: 10px;
+    }
+
+    @media (max-width: 1025px) { 
+        .card{
+            width: 200px;
+            height: 300px;
+        }
+    }
+    @media (max-width: 769px) { 
+        .card{
+            width: 100px;
+            height: 200px;
+        }
+        .card-img{
+            width: 60%;
+            height: 65%;
+        }
+        .card-description{
+            height: 35%;
+        }
+    }
+    @media (max-width: 426px) { 
+        .card{
+            width: 100px;
+            height: 200px;
+            margin-top: 15px;
+        }
+        .card-img{
+            width: 70%;
+            height: 65%;
+        }
+        .card-description{
+            height: 35%;
+        }
     }
 </style>

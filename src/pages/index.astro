@@ -12,40 +12,49 @@ import WorkerCard from '../components/WorkerCard.astro';
 <Layout title="Dentix - Clínica odontologica">
 	<Hero />
 
-	<section class="w-full m-auto xl:mt-32 xl:mb-0 lg:mt-40 md:mt-24 sm:mb-24 xl:p-0 lg:p-10 relative" id="nosotros">
-		<div class="nosotros-container text-white w-full md:p-10 xl:p-24 sm:p-5 text-center sm:w-full relative">
+	<section class="w-full m-auto xl:mt-40 xl:mb-0 lg:mt-40 md:mt-24 md:mb-20 sm:mb-24 lg:mb-0 xl:p-0 lg:p-10 relative" id="nosotros">
+		<div class="nosotros-container text-white w-full md:p-10 xl:pt-24 xl:pb-40 xl:px-24 md:pb-24 sm:p-5 text-center sm:w-full relative">
 			<span class="text-5xl nosotros-span font-normal xl:text-4xl lg:text-3xl lg:font-medium"><strong class="nosotros-strong xl:font-bold lg:font-semibold sm:text-2xl text-white">Somos Dentix</strong></span>
-			<p class="xl:text-2xl lg:text-lg xl:font-light lg:leading-6 sm:leading-5 lg:font-normal sm:font-light">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
+			<p class="xl:text-2xl lg:text-lg xl:font-light lg:leading-6 sm:leading-5 lg:font-normal dm:font-md sm:font-light">Somos una Clínica Dental en Madrid formada por un equipo médico multidisciplinario, altamente formado, con conocimientos técnicos de vanguardia a tu disposición. En nuestra Clínica Dental de Majadahonda encontrarás total implicación, empatía y sensibilidad para que recuperar tu mejor sonrisa. Pones a tu disposición, profesionales comprometidos con la actividad docente universitaria de pregrado, postgrado y con la investigación, para que puedas recuperar tu mejor sonrisa.</p>
 		</div>
-		<div class="nosotros-container2 w-full flex items-center justify-center gap-20 relative bottom-12">
-			<WorkerCard imgSrc="https://gacetadental.com/wp-content/uploads/2019/04/shutterstock_Nestor-Rizhniak.jpg">
-				<span class="text-center">Dentista</span>
-				<h3 class="font-semibold text-center">Loremds ipsum</h3>
-			</WorkerCard>
+		<div class="nosotros-container2 xl:w-3/6 lg:w-4/5 m-auto relative xl:bottom-20 md:bottom-12">
 
-			<WorkerCard imgSrc="https://www.campustraining.es/wp-content/uploads/2021/02/auxiliar-odontologia-requisitos-articulo.jpg.webp">
-				<span class="text-center">Dentista</span>
-				<h3 class="font-semibold text-center">Loremds ipsum</h3>
-			</WorkerCard>
+			<div class="carousel">
+				<WorkerCard imgSrc="https://gacetadental.com/wp-content/uploads/2019/04/shutterstock_Nestor-Rizhniak.jpg">
+					<span class="text-center">Dentista</span>
+					<h3 class="font-semibold text-center">Alberto bolanios</h3>
+				</WorkerCard>
+	
+				<WorkerCard imgSrc="https://www.campustraining.es/wp-content/uploads/2021/02/auxiliar-odontologia-requisitos-articulo.jpg.webp">
+					<span class="text-center">Dentista</span>
+					<h3 class="font-semibold text-center">Carla Del Monte</h3>
+				</WorkerCard>
+	
+				<WorkerCard imgSrc="https://merida.anahuac.mx/hubfs/POSEC%20-%20Educon%20-%20MAES%20%202023/POSEC%20-%20Educon%202023/Web_Imagenes_Actualizacion-Odontologia-General_Imagen2.jpg">
+					<span class="text-center">Dentista</span>
+					<h3 class="font-semibold text-center">María Fernandez</h3>
+				</WorkerCard>
 
-			<WorkerCard imgSrc="https://merida.anahuac.mx/hubfs/POSEC%20-%20Educon%20-%20MAES%20%202023/POSEC%20-%20Educon%202023/Web_Imagenes_Actualizacion-Odontologia-General_Imagen2.jpg">
-				<span class="text-center">Dentista</span>
-				<h3 class="font-semibold text-center">Loremds ipsum</h3>
-			</WorkerCard>
+				<WorkerCard imgSrc="https://merida.anahuac.mx/hubfs/POSEC%20-%20Educon%20-%20MAES%20%202023/POSEC%20-%20Educon%202023/Web_Imagenes_Actualizacion-Odontologia-General_Imagen2.jpg">
+					<span class="text-center">Dentista</span>
+					<h3 class="font-semibold text-center">María Fernandez</h3>
+				</WorkerCard>
+			</div>
+			
 		</div>
 	</section>
 
-	<section class="container w-4/5 lg:w-full sm:w-11/12 m-auto xl:mt-0 lg:my-36 md:mt-24" id="servicios">
+	<section class="container w-4/5 lg:w-full sm:w-11/12 m-auto xl:mt-0 lg:my-36 md:mt-24 lg:mt-0" id="servicios">
 
 		<div class="servicios-title flex flex-col xl:mb-10 lg:mb-3 xl:w-1/4 lg:w-2/4 mx-auto">
-			<h3 class="xl:text-3xl sm:text-2xl text-center font-semibold lg:font-bold">Nuestros servicios</h3>
+			<h3 class="xl:text-3xl sm:text-2xl text-center font-semibold lg:font-semibold">Nuestros servicios</h3>
 			<span class="linea-separador bg-black"></span>
 		</div>
 
 		<div class="my-0 mx-auto">
 		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
 			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 id="entrada" class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-bold">Blanqueamiento dental</h2>
+				<h2 id="entrada" class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Blanqueamiento dental</h2>
 				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
 				  Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br><br>Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
 				</p>
@@ -55,7 +64,7 @@ import WorkerCard from '../components/WorkerCard.astro';
 
 		  <ServiceCard imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
 			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-bold">Tratamiento de caries</h2>
+				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Tratamiento de caries</h2>
 				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
 				  Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br><br>  Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
 				</p>
@@ -65,7 +74,7 @@ import WorkerCard from '../components/WorkerCard.astro';
 
 		  <ServiceCard imgSrc="https://images.squarespace-cdn.com/content/v1/59303b953e00bebc0feaff9f/d6df1776-ac35-4094-b353-e4d9b9087682/ortodoncia-clinica-dental-murcia.jpeg">
 			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-bold">Ortodoncia</h2>
+				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Ortodoncia</h2>
 				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
 				  Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br><br> Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
 				</p>
@@ -77,6 +86,55 @@ import WorkerCard from '../components/WorkerCard.astro';
 	  </section>
 
 	  <ContactCard />
+
+	  <script>
+		$('.carousel').slick({
+		dots: false,
+		infinite: false,
+		arrows: false,
+		speed: 300,
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		responsive: [
+			{
+			breakpoint: 1025,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				infinite: true,
+				arrows: false,
+				dots: false
+			}
+			},
+			{
+			breakpoint: 770,
+			settings: {
+				arrows: false,
+				slidesToShow: 3,
+				slidesToScroll: 3
+			}
+			},
+			{
+			breakpoint: 481,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+			},
+			{
+			breakpoint: 321,
+			settings: {
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+			}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+		]
+		});
+	  </script>
 </Layout>
 
 <style>
