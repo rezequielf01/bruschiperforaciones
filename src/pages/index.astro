@@ -44,42 +44,93 @@ import WorkerCard from '../components/WorkerCard.astro';
 		</div>
 	</section>
 
-	<section class="container w-4/5 lg:w-full sm:w-11/12 m-auto xl:mt-0 lg:my-36 md:mt-24 lg:mt-0" id="servicios">
+	<section class="w-4/5 lg:w-full sm:w-11/12 m-auto xl:mt-0 lg:my-36 md:mt-24 lg:mt-0" id="servicios">
 
 		<div class="servicios-title flex flex-col xl:mb-10 lg:mb-3 xl:w-1/4 lg:w-2/4 mx-auto">
 			<h3 class="xl:text-3xl sm:text-2xl text-center font-semibold lg:font-semibold">Nuestros servicios</h3>
 			<span class="linea-separador bg-black"></span>
 		</div>
 
-		<div class="my-0 mx-auto">
+		<div class="my-0 mx-auto flex justify-around flex-wrap">
+
 		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
-			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 id="entrada" class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Blanqueamiento dental</h2>
-				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
-				  Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br><br>Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
-				</p>
-				<a class="button-info sm:text-sm lg:text-normal xl:text-lg flex items-center justify-start gap-1 burt px-3 py-1 w-fit md:m-auto" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
-			</div>
+			<a class="service-card__a" href="#">
+				<span class="service-card__title">
+					Blanqueamiento dental
+				</span>
+			  </a>
+		  
+			  <p class="service-card__desc max-h-36 overflow-hidden">
+				Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br>
+				Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
+			  </p>
+		  
+			  <a class="service-card__more" href="#">
+				Más información
+				<span aria-hidden="true">
+				  →
+				</span>
+			  </a>
 		  </ServiceCard>
 
-		  <ServiceCard imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg" reverseImg={true}>
-			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Tratamiento de caries</h2>
-				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
-				  Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br><br>  Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
-				</p>
-				<a class="button-info sm:text-sm lg:text-normal xl:text-lg flex items-center justify-start gap-1 burt px-3 py-1 w-fit md:m-auto" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
-			</div>
+		  <ServiceCard imgSrc="https://sevilladental.net/wp-content/uploads/2022/06/tratamiento-para-caries.jpg">
+			<a class="service-card__a" href="#">
+				<span class="service-card__title">
+					Tratamiento de caries
+				</span>
+			  </a>
+		  
+			  <p class="service-card__desc max-h-36 overflow-hidden">
+				Nuestro enfoque en el tratamiento de las caries se basa en las mejores prácticas clínicas y en la atención personalizada a cada paciente.<br>
+				Restauramos el diente utilizando materiales estéticos y duraderos, como resinas compuestas o cerámicas, para devolver su función y estética.
+			  </p>
+		  
+			  <a class="service-card__more" href="#">
+				Más información
+				<span aria-hidden="true">
+				  →
+				</span>
+			  </a>
 		  </ServiceCard>
 
 		  <ServiceCard imgSrc="https://images.squarespace-cdn.com/content/v1/59303b953e00bebc0feaff9f/d6df1776-ac35-4094-b353-e4d9b9087682/ortodoncia-clinica-dental-murcia.jpeg">
-			<div class="flex flex-col lg:w-2/4 md:w-100 my-auto xl:gap-5 lg:gap-3 sm:gap-2">
-				<h2 class="text-4xl lg:text-xl sm:text-xl sm:font-medium lg:font-semibold">Ortodoncia</h2>
-				<p class="text-base lg:text-md lg:leading-6 md:font-normal sm:font-light mt-0">
-				  Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br><br> Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
-				</p>
-				<a class="button-info sm:text-sm lg:text-normal xl:text-lg flex items-center justify-start gap-1 burt px-3 py-1 w-fit md:m-auto" title="Más información"  href="#">Más información <ion-icon name="arrow-forward-outline"></ion-icon></a>
-			</div>
+			<a class="service-card__a" href="#">
+				<span class="service-card__title">
+					Ortodoncia
+				</span>
+			  </a>
+		  
+			  <p class="service-card__desc max-h-36 overflow-hidden">
+				Utilizamos una variedad de dispositivos, desde brackets tradicionales hasta alineadores transparentes, para mover los dientes gradualmente hacia su posición óptima.<br>
+				Nuestro enfoque multidisciplinario implica colaboración con otros profesionales de la salud dental para abordar cualquier problema subyacente y lograr resultados duraderos y estéticamente agradables para nuestros pacientes.
+			  </p>
+		  
+			  <a class="service-card__more" href="#">
+				Más información
+				<span aria-hidden="true">
+				  →
+				</span>
+			  </a>
+		  </ServiceCard>
+
+		  <ServiceCard imgSrc="https://clinicadentaldrmestres.com/wp-content/uploads/2023/04/limpieza-dental-antes-despues-1500x750.jpg">
+			<a class="service-card__a" href="#">
+				<span class="service-card__title">
+					Extracciones
+				</span>
+			  </a>
+		  
+			  <p class="service-card__desc max-h-36 overflow-hidden">
+				Utilizamos productos de blanqueamiento dental de alta calidad que cumplen con los estándares de seguridad y eficacia.<br>
+				Además, personalizamos el tratamiento según las necesidades individuales de cada paciente, considerando factores como el tono inicial de los dientes y la sensibilidad dental. Durante el procedimiento, aplicamos técnicas precisas para minimizar cualquier riesgo de sensibilidad o irritación en las encías.
+			  </p>
+		  
+			  <a class="service-card__more" href="#">
+				Más información
+				<span aria-hidden="true">
+				  →
+				</span>
+			  </a>
 		  </ServiceCard>
 
 		</div>
@@ -231,9 +282,55 @@ import WorkerCard from '../components/WorkerCard.astro';
 		color: white;
 		box-shadow: 0 0 2px var(--color-secondary);
 		transition: all .2s ease-in-out;
+		height: 10%;
 	}
 	.button-info:hover{
 		background: rgb(224, 0, 94);
 		box-shadow: 0 0 2px rgb(224, 0, 94);
 	}
+
+	#entrada{
+		height: 10%;
+	}
+	.service-card__p{
+		height: 80%;
+		max-height: 80;
+		overflow: hidden;
+	}
+
+	.service-card__title {
+  color: #111827;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.service-card__desc {
+  margin-top: 0.5rem;
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.service-card__more {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 0.25rem;
+  background-color:var(--color-secondary);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.service-card__more span {
+  transition: .3s ease;
+}
+
+.service-card__more:hover span {
+  transform: translateX(4px);
+}
 </style>

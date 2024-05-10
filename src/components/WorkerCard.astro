@@ -55,16 +55,22 @@ const { imgSrc } = Astro.props
     }
     @media (max-width: 426px) { 
         .card{
-            width: 100px;
-            height: 200px;
-            margin-top: 15px;
+            margin-top: 35px;
         }
         .card-img{
-            width: 70%;
+            width: 65%;
             height: 65%;
         }
         .card-description{
             height: 35%;
+        }
+    }
+    @media (max-width: 321px) { 
+        .card-img{
+            width: 45%;
+        }
+        .card{
+            margin-top: 35px;
         }
     }
 </style>
