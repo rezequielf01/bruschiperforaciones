@@ -3,52 +3,77 @@ import { Image } from 'astro:assets';
 
 ---
 
-<section class="w-full xl:my-24 sm:mt-36 lg:mt-24 sm:mb-20 lg:w-11/12 lg:mx-auto md:mt-44 sm:w-11/12 sm:mx-auto">
-    <div class="md:m-auto sm:w-full bg-red flex items-center justify-between lg:gap-10 sm:gap-5">
-        <div class="flex flex-col w-50 lg:w-3/5 bg-white">
-            <h1 class="xl:text-5xl lg:text-3xl xl:font-normal sm:font-semibold lg:font-medium sm:text-2xl">Clínica odontologica</h1>
-            <p class="lg:mb-5 lg:mt-1 md:my-4 xl:font-light xl:text-xl lg:text-lg lg:font-normal lg:leading-6">Cónoce nuestra <b class="font-normal">clínica dental</b>. Solicita una cita sin compromiso y te asesoramos. Nuestro equipo profesional se encargará de que te sientas como en casa.</p>
-            <div class="flex lg:gap-5 sm:gap-3 sm:mt-2">
-                <a class="button lg:text-lg flex items-center lg:font-ligth sm:text-sm sm:gap-1 sm:py-2 sm:px-3 color-primario" title="Instagram"  href="#servicios">
-                    <ion-icon class="lg:text-2xl md:text-xl" name="logo-instagram"></ion-icon>
-                    Instagram
-                </a>
-                <a class="button lg:text-lg lg:font-ligth sm:text-sm sm:gap-1 sm:py-2 sm:px-3 color-secondary" title="Nuestros servicios"  href="#servicios">
-                    <ion-icon class="lg:text-2xl md:text-xl"  name="color-wand-outline"></ion-icon>
-                    Nuestros servicios
-                </a>
-            </div>
-        </div>
-        <div class="flex w-50 lg:w-2/5 bg-black md:block sm:hidden">
-            <Image class="img-hero" src="https://static.wixstatic.com/media/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg/v1/fill/w_1000,h_583,al_c,q_85,usm_0.66_1.00_0.01/7869d1_ca5ef3491f6f46e2bbf327a62d326ab2~mv2.jpg" alt="Dentrix" width="100" height="100" />
-        </div>
+<section class="hero-container">
+
+    <div class="hero-txt">
+        <h2 class="hero-txt__h2">Perforaciones los paisa</h2>
+        <h1 class="hero-txt__h1">Perforaciones de agua para viviendas agro e industrias</h1>
+        <span class="hero-txt__span">Seguridad, experiencia y calidad</span>
+        <span class="hero-txt__btn">Contáctenos</span>
     </div>
+
 </section>
 
 <style>
     
-    .img-hero{
-        width: 100%;
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    }
-    .button {
-        display: flex;
-        width: fit-content;
-        font-weight: 400;
-        text-decoration: none;
-        text-align: center;
-        color: var(--neutral-900);
-        background-color: var(--color-principal);
-        border-radius: 3px;
-        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-    }
-    .button.color-secondary{
-        background-color: transparent;
-        border: solid 1px black;
-    }
-    .button.color-secondary:hover, .button.color-secondary:focus {
-        border-color: var(--color-secondary);
-        color: var(--color-secondary);
-        box-shadow: 0 0 10px rgba(0, 204, 255, 0.2);
-    }
+    .hero-container{
+		width: 100%;
+		height: 600px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		background: linear-gradient(to left,rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.6) 60% 100%),url(../images/hero-perforaciones.jpg) no-repeat center / cover ;
+		background-attachment: fixed;
+	}
+	.hero-logo{
+		width: 125px;
+		height: 125px;
+		border-radius: 50%;
+		box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+	}
+	.hero-logo__img{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	.hero-txt{
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+		padding-left: 5%;
+		gap: 0px;
+		color: white;
+		font-weight: bold;
+	}
+	.hero-txt__h2{
+		font-size: 1.2rem;
+		text-transform: uppercase;
+	}
+	.hero-txt__h1{
+		font-size: 2rem;
+	}
+	.hero-txt__span{
+		font-size: 1.2rem;
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-top: 5px;
+	}
+	.hero-txt__btn{
+		background: var(--principal);
+		color: white;
+		padding: 10px 20px;
+		border-radius: 10px;
+		text-transform: uppercase;
+		margin-top: 15px;
+		cursor: pointer;
+		transition: var(--trans-02);
+	}
+	.hero-txt__btn:hover{
+		background: var(--principal2);
+	}
+
 </style>

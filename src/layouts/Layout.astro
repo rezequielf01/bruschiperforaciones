@@ -13,7 +13,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="En nuestra clínica odontológica, nos dedicamos a proporcionar atención dental de alta calidad en un ambiente cálido y acogedor." />
+		<meta name="description" content="Nos dedicamos a la perforacion de agua" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -56,10 +56,11 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	<Footer />
 </html>
 <style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 	
 	:root {
 		--accent: 136, 58, 234;
+		--principal: #002949;
+		--principal2: #0073ca;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
 		--accent-gradient: linear-gradient(
@@ -68,11 +69,10 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		--color-principal: rgb(0, 195, 255);
-		--color-secondary: rgb(252, 22, 118);
+		--trans-02: all .2s ease-in-out;
 	}
 	html {
-		font-family: "Open Sans", sans-serif;
+		font-family: system-ui, sans-serif;
 		background: white;
 		background-size: 224px;
 		scroll-behavior: smooth;
@@ -99,7 +99,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		justify-content: center;
 	}
 	.nav-hidden{
-		top: 100px;
+		top: 80px;
 	}
 	#wsp-float-btn{
 		width: 60px;
@@ -123,18 +123,350 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		color: #25d366;
 	}
 
-	@media (max-width: 426px) { 
-        #wsp-float-btn{
-			bottom: 15px;
-			right: 15px;
+	.span-separador{
+		display: flex;
+		width: 90%;
+		margin: 0 auto;
+		padding: 100px 0;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.span-separador__h4{
+		color: var(--principal);
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	.separador{
+		width: 10%;
+		height: 5px;
+		background: var(--principal);
+		margin: 10px 0;
+	}
+	.span-separador__p{
+		color: black;
+		font-size: 1.1rem;
+	}
+
+	.nosotros-seciton{
+		width: 100%;
+		height: 500px;
+		background: var(--principal);
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.nosotros-carousel{
+		width: 45%;
+		height: 80%;
+		background: red;
+	}
+	.carousel-box{
+		width: 100%;
+		height: 400px;
+		background: gray;
+		position: relative;
+	}
+	.carousel-box__img{
+		width: 100%;
+		height: 100%;
+	}
+	.nosotros-txt{
+		width: 50%;
+	}
+	.nosotros-txt__h2{
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: white;
+	}
+	.nosotros-txt__p{
+		font-size: 1.1rem;
+		color: white;
+		font-weight: normal;
+	}
+
+	.servicios-section{
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 100px 0;
+	}
+	.servicios__h2{
+		font-size: 1.8rem;
+		color: black;
+		border-left: solid 3px var(--principal);
+		border-bottom: solid 3px var(--principal);
+		padding: 0 0 5px 5px;
+		width: fit-content;
+		display: flex;
+		align-items: start;
+		justify-content: center;
+		gap: 10px;
+	}
+	.servicios__span{
+		color: var(--principal);
+	}
+
+	.section-title{
+		width: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+
+	.servicios-cards{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.servicios-card{
+		width: 250px;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		border-radius: 5px;
+		color: var(--principal);
+	}
+	.servicios-card__img{
+		width: 50%;
+		padding: 25px;
+		border-radius: 50%;
+		border: solid 1px white;
+	}
+
+	.servicios-separador{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 250px;
+		background-image: url("https://www.pozos-de-agua.com/wp-content/uploads/2017/12/background-24.jpg");
+	}
+	.servicios-container-wrapp{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.servicios-bx{
+		width: 350px;
+		height: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 5px;
+		color: var(--principal);
+		gap: 15px;
+		color: white;
+	}
+	.servicios-bx__img{
+		width: 30%;
+		background: none;
+		padding: 25px;
+		border-radius: 50%;
+		border: solid 2px white;
+		box-shadow: 0 0 3px white;
+	}
+	.servicios-bx__txt{
+		display: flex;
+		flex-direction: column;
+		font-size: 1rem;
+	}
+	.servicios-bx__txt span{
+		font-size: 1.5rem;
+	}
+
+	.galeria-section{
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-transform: uppercase;
+		font-weight: bold;
+		gap: 50px;
+	}
+	.galeria-title__h2{
+		font-size: 1.8rem;
+		color: black;
+		border-left: solid 3px var(--principal);
+		border-bottom: solid 3px var(--principal);
+		padding: 0 0 5px 5px;
+		width: fit-content;
+		display: flex;
+		align-items: start;
+		justify-content: center;
+		gap: 10px;
+	}
+	.galeria-title{
+		width: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+	}
+
+	.galeria-grid {
+		width: 75%;
+		height: auto;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 25px;
+		grid-row-gap: 25px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	.div1 {
+		grid-area: 1 / 1 / 2 / 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: gray;
+		width: 100%;
+		height: 100%;
+	}
+	.div2 { 
+		grid-area: 1 / 2 / 2 / 3; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: green;
+		width: 100%;
+		height: 100%;
+	}
+	.div3 { 
+		grid-area: 1 / 3 / 2 / 4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: yellow;
+		width: 100%;
+		height: 100%;
+	}
+	.div4 { 
+		grid-area: 2 / 1 / 3 / 2; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: yellow;
+		width: 100%;
+		height: 100%;
+	}
+	.div5 { 
+		grid-area: 2 / 2 / 3 / 3; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: yellow;
+		width: 100%;
+		height: 100%;
+	}
+	.div6 { 
+		grid-area: 2 / 3 / 3 / 4; 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: yellow;
+		width: 100%;
+		height: 100%;
+	}
+	.galeria-bx__img{
+		width: 100%;
+		height: 100%;
+		box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+	}
+
+
+	.span-separador2{
+		width: 100%;
+		height: 100px;
+		background: #0c0c0c;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: white;
+		margin-top: 50px;
+	}
+	.span-separador2 h3{
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.location-section{
+		width: 100%;
+		height: 350px;
+	}
+
+	@media only screen and (max-width: 469px){
+		.nosotros-seciton{
+			flex-direction: column;
+			height: auto;
+			padding: 15px;
+			gap: 10px;
 		}
-		.nav-hidden{
-			top: 80px;
+		.nosotros-carousel{
+			width: 100%;
 		}
-    }
-	@media (min-width: 1023px) { 
-        .nav-mobile{
-			display: none;
+		.nosotros-txt{
+			width: 100%;
 		}
-    } 
+		.nosotros-txt__h2{
+			text-align: center;
+		}
+
+		.servicios-section{
+			padding: 50px 0;
+		}
+		.section-title, .galeria-title{
+			justify-content: center;
+		}
+		.servicios__h2, .galeria-title__h2{
+			font-size: 1.5rem;
+		}
+		.servicios-separador{
+			height: auto;
+			padding: 15px 0;
+		}
+		.servicios-container-wrapp{
+			flex-direction: column;
+			justify-content: flex-start;
+			gap: 25px;
+		}
+		.servicios-bx{
+			justify-content: flex-start;
+		}
+
+		.galeria-grid{
+			width: 80%;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);				
+		}
+		.div1 { grid-area: 1 / 1 / 2 / 2; }
+		.div2 { grid-area: 2 / 1 / 3 / 2; }
+		.div3 { grid-area: 3 / 1 / 4 / 2; }
+		.div4 { grid-area: 4 / 1 / 5 / 2; }
+		.div5 { grid-area: 5 / 1 / 6 / 2; }
+		.div6 { grid-area: 6 / 1 / 7 / 2; }
+		
+		.span-separador2 h3{
+			font-size: 1rem;
+		}
+	}
 </style>
