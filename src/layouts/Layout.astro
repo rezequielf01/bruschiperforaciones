@@ -73,9 +73,10 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						<div class="form-bx">
 							<label for="service">Tipo de Servicio:</label>
 							<select id="service" name="service" required>
-								<option value="servicio1">Servicio 1</option>
-								<option value="servicio2">Servicio 2</option>
-								<option value="servicio3">Servicio 3</option>
+								<option value="Perforación simple">Perforación simple</option>
+								<option value="Sumergidas">Sumergidas</option>
+								<option value="Reparaciones">Reparaciones</option>
+								<option value="Bombas">Bómbas</option>
 							</select>
 						</div>
 			
@@ -103,63 +104,63 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 			<script>
 
 				// Obtener el modal
-const modal = document.getElementById("myModal") as HTMLDivElement | null;
+				const modal = document.getElementById("myModal") as HTMLDivElement | null;
 
-// Verificar que el modal no sea null antes de manipularlo
-if (modal) {
-    // Obtener el botón que abre el modal
-    const btn = document.getElementById("contactBtn") as HTMLButtonElement | null;
+				// Verificar que el modal no sea null antes de manipularlo
+				if (modal) {
+					// Obtener el botón que abre el modal
+					const btn = document.getElementById("contactBtn") as HTMLButtonElement | null;
 
-    // Obtener el elemento <span> que cierra el modal
-    const span = document.getElementsByClassName("close")[0] as HTMLSpanElement | null;
+					// Obtener el elemento <span> que cierra el modal
+					const span = document.getElementsByClassName("close")[0] as HTMLSpanElement | null;
 
-    // Verificar que el botón y el span no sean null antes de asignarles eventos
-    if (btn && span) {
-        // Cuando el usuario haga clic en el botón, abre el modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-            setTimeout(() => modal.classList.add("show"), 10); // Añadir la clase "show" con un pequeño retraso para activar la animación
-        }
+					// Verificar que el botón y el span no sean null antes de asignarles eventos
+					if (btn && span) {
+						// Cuando el usuario haga clic en el botón, abre el modal 
+						btn.onclick = function() {
+							modal.style.display = "block";
+							setTimeout(() => modal.classList.add("show"), 10); // Añadir la clase "show" con un pequeño retraso para activar la animación
+						}
 
-        // Cuando el usuario haga clic en <span> (x), cierra el modal
-        span.onclick = function() {
-            modal.classList.remove("show");
-            setTimeout(() => modal.style.display = "none", 400); // Espera la duración de la animación antes de ocultar el modal
-        }
-    }
+						// Cuando el usuario haga clic en <span> (x), cierra el modal
+						span.onclick = function() {
+							modal.classList.remove("show");
+							setTimeout(() => modal.style.display = "none", 400); // Espera la duración de la animación antes de ocultar el modal
+						}
+					}
 
-    // Cuando el usuario haga clic fuera del modal, también lo cierra
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.classList.remove("show");
-            setTimeout(() => modal.style.display = "none", 400); // Espera la duración de la animación antes de ocultar el modal
-        }
-    }
-}
+					// Cuando el usuario haga clic fuera del modal, también lo cierra
+					window.onclick = function(event) {
+						if (event.target === modal) {
+							modal.classList.remove("show");
+							setTimeout(() => modal.style.display = "none", 400); // Espera la duración de la animación antes de ocultar el modal
+						}
+					}
+				}
 
-// Manejar el envío del formulario
-const form = document.getElementById("contactForm") as HTMLFormElement | null;
-if (form) {
-    form.onsubmit = function(event) {
-        event.preventDefault(); // Evitar el envío del formulario de manera tradicional
+				// Manejar el envío del formulario
+				const form = document.getElementById("contactForm") as HTMLFormElement | null;
+				if (form) {
+					form.onsubmit = function(event) {
+						event.preventDefault(); // Evitar el envío del formulario de manera tradicional
 
-        // Obtener los valores del formulario
-        const name = (document.getElementById("name") as HTMLInputElement | null)?.value || '';
-        const phone = (document.getElementById("phone") as HTMLInputElement | null)?.value || '';
-        const address = (document.getElementById("address") as HTMLInputElement | null)?.value || '';
-        const city = (document.getElementById("city") as HTMLInputElement | null)?.value || '';
-        const service = (document.getElementById("service") as HTMLSelectElement | null)?.value || '';
+						// Obtener los valores del formulario
+						const name = (document.getElementById("name") as HTMLInputElement | null)?.value || '';
+						const phone = (document.getElementById("phone") as HTMLInputElement | null)?.value || '';
+						const address = (document.getElementById("address") as HTMLInputElement | null)?.value || '';
+						const city = (document.getElementById("city") as HTMLInputElement | null)?.value || '';
+						const service = (document.getElementById("service") as HTMLSelectElement | null)?.value || '';
 
-        // Construir el mensaje
-        const message = `Nombre: ${encodeURIComponent(name)}%0ATeléfono: ${encodeURIComponent(phone)}%0ADirección: ${encodeURIComponent(address)}%0ALocalidad: ${encodeURIComponent(city)}%0ATipo de Servicio: ${encodeURIComponent(service)}`;
+						// Construir el mensaje
+						const message = `Nombre: ${encodeURIComponent(name)}%0ATeléfono: ${encodeURIComponent(phone)}%0ADirección: ${encodeURIComponent(address)}%0ALocalidad: ${encodeURIComponent(city)}%0ATipo de Servicio: ${encodeURIComponent(service)}`;
 
-        // Enlace para WhatsApp
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
+						// Enlace para WhatsApp
+						const whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
 
-        // Redirigir al usuario a WhatsApp
-        window.location.href = whatsappUrl;
-    }
-}
+						// Redirigir al usuario a WhatsApp
+						window.location.href = whatsappUrl;
+					}
+				}
 			
 			</script>
 			
@@ -326,9 +327,9 @@ if (form) {
 		align-items: center;
 		justify-content: center;
 	}
-	.span-separador__h4{
+	.span-separador__h3{
 		color: var(--principal);
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 	}
 	.separador{
