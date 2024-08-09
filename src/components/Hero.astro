@@ -14,113 +14,8 @@
 
 </section>
 
-<div id="myModal" class="modal">
-
-	<div class="modal-content">
-		<span class="close">
-			&times;
-		</span>
-		<form id="contactForm" class="formulario-contacto">
-
-			<div class="">
-				<label for="name">Nombre:</label>
-				<input type="text" id="name" name="name" required>
-			</div>
-
-			<div>
-				<label for="phone">Teléfono:</label>
-				<input type="tel" id="phone" name="phone" required>
-			</div>
-
-			<div>
-				<label for="address">Dirección:</label>
-				<input type="text" id="address" name="address" required>
-			</div>
-
-			<div>
-				<label for="city">Localidad:</label>
-				<select id="city" name="city" required>
-					<option value="Domselaar">Domselaar</option>
-					<option value="San Vicente">San Vicente</option>
-					<option value="Alejandro Korn">Alejandro Korn</option>
-					<option value="Guernica">Guernica</option>
-					<option value="Glew">Glew</option>
-				</select>
-			</div>
-
-			<div>
-				<label for="service">Tipo de Servicio:</label>
-				<select id="service" name="service" required>
-					<option value="servicio1">Servicio 1</option>
-					<option value="servicio2">Servicio 2</option>
-					<option value="servicio3">Servicio 3</option>
-				</select>
-			</div>
-
-            <button type="submit">Enviar</button>
-        </form>
-	</div>
-
-</div>
 
 <style>
-
-	.modal{
-		display: none;
-		position: fixed;
-		z-index: 1001;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0, 0, 0,);
-		background-color: rgba(0, 0, 0,0.4);
-		text-align: center;
-		
-	}
-	.modal-content{
-		background-color: #fefefe;
-		margin: 15% auto;
-		padding: 20px;
-		border: solid 1px #888;
-		width: 50%;
-		transform: translateY(-300%);
-		transition: transform 0.3s ease-out;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-	}
-	.modal.show .modal-content{
-		transform: translateY(0);
-	}
-	.close{
-		color: #5c5c5c;
-		float: right;
-		font-size: 28px;
-		font-weight: bold;
-		top: 0;
-		right: 10px;
-		position: absolute;
-		margin: 0;
-		padding: 0;
-	}
-	.close:hover,
-	.close:focus{
-		color: black;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	.formulario-contacto{
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		justify-content: center;
-		gap: 25px;
-	}
 
     
     .hero-container{
@@ -183,17 +78,5 @@
 		background: var(--principal2);
 	}
 
-
-	@media only screen and (max-width: 469px) {
-		.modal-content{
-			background-color: #fefefe;
-			margin: 50% auto;
-			padding: 20px;
-			border: solid 1px #888;
-			width: 80%;
-			transform: translateY(-100%);
-			transition: transform 0.3s ease-out;
-		}
-	}
 
 </style>

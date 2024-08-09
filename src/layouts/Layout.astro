@@ -36,6 +36,55 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 				<ion-icon name="logo-whatsapp"></ion-icon>
 			</a>
 
+			<div id="myModal" class="modal">
+
+				<div class="modal-content">
+					<span class="close">
+						&times;
+					</span>
+					<form id="contactForm" class="formulario-contacto">
+			
+						<div class="form-bx">
+							<label for="name">Nombre:</label>
+							<input type="text" id="name" name="name" placeholder="Nombre" required>
+						</div>
+			
+						<div class="form-bx">
+							<label for="phone">Teléfono:</label>
+							<input type="tel" id="phone" name="phone" placeholder="Telefono" required>
+						</div>
+			
+						<div class="form-bx">
+							<label for="address">Dirección:</label>
+							<input type="text" id="address" name="address" placeholder="Ejemplo 123" required>
+						</div>
+			
+						<div class="form-bx">
+							<label for="city">Localidad:</label>
+							<select id="city" name="city" required>
+								<option value="Domselaar">Domselaar</option>
+								<option value="San Vicente">San Vicente</option>
+								<option value="Alejandro Korn">Alejandro Korn</option>
+								<option value="Guernica">Guernica</option>
+								<option value="Glew">Glew</option>
+							</select>
+						</div>
+			
+						<div class="form-bx">
+							<label for="service">Tipo de Servicio:</label>
+							<select id="service" name="service" required>
+								<option value="servicio1">Servicio 1</option>
+								<option value="servicio2">Servicio 2</option>
+								<option value="servicio3">Servicio 3</option>
+							</select>
+						</div>
+			
+						<button type="submit">Enviar</button>
+					</form>
+				</div>
+			
+			</div>
+
 			<main id="main-content" transition:animate="fade">
 				<div id="nav-mobile" class="nav-mobile w-full sm:h-80 sm:fixed bg-black">
 					<div class="flex flex-col">
@@ -185,6 +234,87 @@ if (form) {
 		background: white;
 		color: #25d366;
 	}
+
+
+	.modal{
+		display: none;
+		position: fixed;
+		z-index: 1001;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0,);
+		background-color: rgba(0, 0, 0,0.4);
+		text-align: center;
+		
+	}
+	.modal-content{
+		background-color: white;
+		margin: 15% auto;
+		padding: 20px;
+		border: solid 1px #888;
+		border-radius: 5px;
+		width: 50%;
+		transform: translateY(-300%);
+		transition: transform 0.3s ease-out;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+	.modal.show .modal-content{
+		transform: translateY(0);
+	}
+	.close{
+		color: #5c5c5c;
+		font-size: 25px;
+		font-weight: bold;
+		top: 0;
+		right: 10px;
+		position: absolute;
+		margin: 0;
+		padding: 0;
+	}
+	.close:hover,
+	.close:focus{
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.formulario-contacto{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 25px;
+		width: 100%;
+	}
+	.form-bx{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 15px
+	}
+	.formulario-contacto input{
+		border-bottom: solid 1px silver;
+		width: 50%;
+		outline: none;
+	}
+	.formulario-contacto button{
+		background: #25d366;
+		padding: 10px 25px;
+		border-radius: 5px;
+		margin: 0 auto;
+	}
+	.formulario-contacto button:hover{
+		background: #49ed85;
+	}
+
 
 	.span-separador{
 		display: flex;
@@ -479,6 +609,16 @@ if (form) {
 
 	@media only screen and (max-width: 469px){
 
+		.modal-content{
+			background-color: #fefefe;
+			margin: 50% auto;
+			padding: 20px;
+			border: solid 1px #888;
+			width: 90%;
+			transform: translateY(-100%);
+			transition: transform 0.3s ease-out;
+		}
+
 		.nosotros-seciton{
 			flex-direction: column;
 			height: auto;
@@ -513,8 +653,17 @@ if (form) {
 			justify-content: flex-start;
 			gap: 25px;
 		}
+
 		.servicios-bx{
+			width: 100%;
 			justify-content: flex-start;
+			padding-left: 25px;
+		}
+		.servicios-bx__img{
+			width: 30%;
+		}
+		.servicios-bx__txt{
+			font-size: .9rem;
 		}
 
 		.galeria-grid{
