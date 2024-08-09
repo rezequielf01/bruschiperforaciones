@@ -58,54 +58,6 @@
 
 </div>
 
-<script>
-
-	let modal = document.getElementById("myModal");
-
-	let btn = document.getElementById("contactBtn");
-
-	let span = document.getElementsByClassName("close")[0];
-
-	btn.addEventListener("click", (event) => {
-  		modal.style.display = "block";
-		setTimeout(() => modal.classList.add("show"),10);
-	});
-
-	span.addEventListener("click", (event) => {
-  		modal.style.display = "none";
-		setTimeout(() => modal.style.display="none",400);
-	});
-
-	window.onclick = function (event) {
-		if(event.target == modal){
-			modal.style.display="none";
-			setTimeout(() => modal.style.display="none",400);
-		}
-	}
-
-	// Manejar el envío del formulario
-	document.getElementById("contactForm").onsubmit = function(event) {
-		event.preventDefault(); // Evitar el envío del formulario de manera tradicional
-
-		// Obtener los valores del formulario
-		var name = (document.getElementById("name") as HTMLInputElement).value;
-		var phone = (document.getElementById("phone") as HTMLInputElement).value;
-		var address = (document.getElementById("address") as HTMLInputElement).value;
-		var city = (document.getElementById("city") as HTMLInputElement).value;
-		var service = (document.getElementById("service") as HTMLInputElement).value;
-
-		// Construir el mensaje
-		var message = `Nombre: ${name}%0ATeléfono: ${phone}%0ADirección: ${address}%0ALocalidad: ${city}%0ATipo de Servicio: ${service}`;
-
-		// Enlace para WhatsApp
-		var whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
-
-		// Redirigir al usuario a WhatsApp
-		window.location.href = whatsappUrl;
-	}	
-
-</script>
-
 <style>
 
 	.modal{
