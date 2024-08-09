@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+// import { Image } from 'astro:assets';
 
 ---
 
@@ -9,12 +9,152 @@ import { Image } from 'astro:assets';
         <h2 class="hero-txt__h2">Perforaciones los paisa</h2>
         <h1 class="hero-txt__h1">Perforaciones de agua para viviendas agro e industrias</h1>
         <span class="hero-txt__span">Seguridad, experiencia y calidad</span>
-        <span class="hero-txt__btn">Contáctenos</span>
+        <span class="hero-txt__btn" id="contactBtn">Contáctenos</span>
     </div>
 
 </section>
 
+<div id="myModal" class="modal">
+
+	<div class="modal-content">
+		<span class="close">
+			&times;
+		</span>
+		<h2>Este es un modal</h2>
+		<form id="contactForm" class="formulario-contacto">
+
+			<div>
+				<label for="name">Nombre:</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+
+			<div>
+				<label for="phone">Teléfono:</label>
+				<input type="tel" id="phone" name="phone" required>
+			</div>
+
+			<div>
+				<label for="address">Dirección:</label>
+				<input type="text" id="address" name="address" required>
+			</div>
+
+			<div>
+				<label for="city">Localidad:</label>
+				<input type="text" id="city" name="city" required>
+			</div>
+
+			<div>
+				<label for="service">Tipo de Servicio:</label>
+				<select id="service" name="service" required>
+					<option value="servicio1">Servicio 1</option>
+					<option value="servicio2">Servicio 2</option>
+					<option value="servicio3">Servicio 3</option>
+				</select>
+			</div>
+
+            <button type="submit">Enviar</button>
+        </form>
+	</div>
+
+</div>
+
+<script>
+
+	let modal = document.getElementById("myModal");
+
+	let btn = document.getElementById("contactBtn");
+
+	let span = document.getElementsByClassName("close")[0];
+
+	btn.addEventListener("click", (event) => {
+  		modal.style.display = "block";
+		setTimeout(() => modal.classList.add("show"),10);
+	});
+
+	span.addEventListener("click", (event) => {
+  		modal.style.display = "none";
+		setTimeout(() => modal.style.display="none",400);
+	});
+
+	window.onclick = function (event) {
+		if(event.target == modal){
+			modal.style.display="none";
+			setTimeout(() => modal.style.display="none",400);
+		}
+	}
+
+	// Manejar el envío del formulario
+	document.getElementById("contactForm").onsubmit = function(event) {
+		event.preventDefault(); // Evitar el envío del formulario de manera tradicional
+
+		// Obtener los valores del formulario
+		var name = (document.getElementById("name") as HTMLInputElement).value;
+		var phone = (document.getElementById("phone") as HTMLInputElement).value;
+		var address = (document.getElementById("address") as HTMLInputElement).value;
+		var city = (document.getElementById("city") as HTMLInputElement).value;
+		var service = (document.getElementById("service") as HTMLInputElement).value;
+
+		// Construir el mensaje
+		var message = `Nombre: ${name}%0ATeléfono: ${phone}%0ADirección: ${address}%0ALocalidad: ${city}%0ATipo de Servicio: ${service}`;
+
+		// Enlace para WhatsApp
+		var whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
+
+		// Redirigir al usuario a WhatsApp
+		window.location.href = whatsappUrl;
+	}	
+
+</script>
+
 <style>
+
+	.modal{
+		display: none;
+		position: fixed;
+		z-index: 1001;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0,);
+		background-color: rgba(0, 0, 0,0.4);
+		text-align: center;
+		
+	}
+	.modal-content{
+		background-color: #fefefe;
+		margin: 15% auto;
+		padding: 20px;
+		border: solid 1px #888;
+		width: 50%;
+		transform: translateY(-100%);
+		transition: transform 0.3s ease-out;
+	}
+	.modal.show .modal-content{
+		transform: translateY(0);
+	}
+	.close{
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	.close:hover,
+	.close:focus{
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.formulario-contacto{
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+		gap: 25px;
+	}
+
     
     .hero-container{
 		width: 100%;
