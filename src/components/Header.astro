@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import Nav from '../components/Nav.astro';
 ---
 
-<header class="xl:w-4/5 lg:p-2 xl:mx-auto lg:shadow-none md:shadow-lg lg:w-full flex items-center justify-around lg:relative sm:fixed sm:top-0 sm:left-0 sm:w-full sm:bg-white sm:p-2" style="z-index: 1000;">
+<header class="z-50 xl:w-4/5 lg:p-2 xl:mx-auto lg:w-full flex items-center justify-around lg:relative sm:fixed sm:top-0 sm:left-0 sm:w-full sm:bg-white sm:p-2" style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);">
 
     <div class="header-img">
         <Image src="/images/logo-pozosprofundos.jpg" alt="Dentrix" width="70" height="20" />
@@ -54,9 +54,7 @@ import Nav from '../components/Nav.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 		position: fixed;
-		z-index: 1000;
 		top: 0;
 	}
 
@@ -132,13 +130,27 @@ import Nav from '../components/Nav.astro';
 		background: var(--principal2);
 	}
 
-    @media (max-width: 426px) { 
+    @media only screen and (max-width: 376px){
+        .header-img{
+            width: 50px;
+            height: 50px;
+        }
+        .header-redes__a{
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media only screen and (min-width: 420px) { 
         header{
             height: 80px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
-        body{
-            margin-top: 80px;
+    }
+    
+    @media only screen and (min-width: 1439px) { 
+        header{
+            width: 100%;
         }
     } 
 
