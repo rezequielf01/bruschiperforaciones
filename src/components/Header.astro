@@ -6,7 +6,7 @@ import Nav from '../components/Nav.astro';
 <header class="z-50 xl:w-4/5 lg:p-2 xl:mx-auto lg:w-full flex items-center justify-around lg:relative sm:fixed sm:top-0 sm:left-0 sm:w-full sm:bg-white sm:p-2" style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);">
 
     <div class="header-img">
-        <Image src="/images/logo-pozosprofundos.jpg" alt="Dentrix" width="70" height="20" />
+        <Image src="/images/mauricio-bruschi-logo-chico.jpg" alt="Mauricio Bruschi" width="250" height="20" />
     </div>
 
 
@@ -131,9 +131,17 @@ import Nav from '../components/Nav.astro';
 	}
 
     @media only screen and (max-width: 376px){
+        header{
+            height: 80px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
         .header-img{
-            width: 50px;
-            height: 50px;
+            width: 200px;
+            height: 75px;
+        }
+        .header-redes{
+            gap: 5px;
+            display: none;
         }
         .header-redes__a{
             width: 35px;
@@ -146,7 +154,15 @@ import Nav from '../components/Nav.astro';
             height: 80px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
+        .header-redes{
+            gap: 10px;
+        }
+        .header-img{
+            width: 200px;
+            height: 80px;
+        }
     }
+    
     
     @media only screen and (min-width: 1439px) { 
         header{

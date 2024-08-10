@@ -3,11 +3,6 @@
 
 <nav class="">
     <ul class="flex lg:flex-row sm:flex-col items-center content-center gap-4 sm:gap-5">
-        <li>
-            <a href="/" title="Inicio"  class="xl:text-xl lg:text-base flex flex-col items-center justify-center gap-0">Inicio
-                <span class="nav__span"></span>
-            </a>
-        </li>
         <li class="flex flex-col items-center justify-center gap-0">
             <a href="#nosotros" title="Sobre nosotros"  class="xl:text-xl lg:text-base flex flex-col items-center justify-center gap-0">Quiénes somos
                 <span class="nav__span"></span>
@@ -33,6 +28,30 @@
 </nav>
 
 <style>
+    .header-redes{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+	}
+	.header-redes__a{
+		background: var(--principal);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3	);
+		font-size: 1.2rem;
+		transition: var(--trans-02);
+	}
+	.header-redes__a:hover{
+		background: var(--principal2);
+	}
+
+
     nav ul li{
         width: fit-content;
     }
