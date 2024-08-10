@@ -73,10 +73,10 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						<div class="form-bx">
 							<label for="service">Tipo de Servicio:</label>
 							<select id="service" name="service" required>
-								<option value="Perforación simple">Perforación simple</option>
-								<option value="Sumergidas">Sumergidas</option>
-								<option value="Reparaciones">Reparaciones</option>
-								<option value="Bombas">Bómbas</option>
+								<option value="Perforación para bomba centrífuga">Perf. para bombas centrífuga</option>
+								<option value="Sumergidas">Perf. para bombas sumergible</option>
+								<option value="Reparaciones de perforación">Reparaciones de perf</option>
+								<option value="Reemplazo de bombas">Reemplazo de bombas</option>
 							</select>
 						</div>
 			
@@ -386,7 +386,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	.nosotros-seciton{
 		width: 100%;
 		height: 500px;
-		background: var(--principal);
+		background: black;
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -394,17 +394,17 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	.nosotros-carousel{
 		width: 45%;
 		height: 80%;
-		background: red;
 	}
 	.carousel-box{
 		width: 100%;
 		height: 400px;
-		background: gray;
 		position: relative;
 	}
 	.carousel-box__img{
 		width: 100%;
 		height: 100%;
+		border-radius: 10px;
+		padding: 5px;
 	}
 	.nosotros-txt{
 		width: 50%;
@@ -429,7 +429,9 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		flex-direction: column;
 		text-transform: uppercase;
 		font-weight: bold;
-		padding: 100px 0;
+		margin: 100px 0;
+		padding: 0;
+		gap: 50px;
 	}
 	.servicios__h2{
 		font-size: 1.8rem;
@@ -448,35 +450,60 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	}
 
 	.section-title{
-		width: 80%;
+		width: 90%;
 		display: flex;
 		align-items: center;
 		justify-content: start;
 	}
 
 	.servicios-cards{
-		width: 100%;
+		width: 90%;
+		height: auto;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: space-between;
 		flex-wrap: wrap;
+		gap: 25px;
 	}
 	.servicios-card{
-		width: 250px;
-		height: 250px;
+		width: 350px;
+		height: auto;
+		min-height: 300px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 10px;
-		border-radius: 5px;
+		gap: 15px;
+		border-radius: 10px;
 		color: var(--principal);
+		color: #0c0c0c;
+		padding: 15px;
+		background: white;
+		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+		transition: var(--trans-02);
+		user-select: none ;
 	}
+	.servicios-card:hover{
+		transform: scale(1.05);
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}
+	.servicios-card__h3{
+		font-weight: 500;
+		font-size: 1.5;
+		letter-spacing: 1px;
+	}
+	.servicios-card__p{
+		font-weight: lighter;
+		font-size: .9rem;
+		text-transform: none;
+	}
+
 	.servicios-card__img{
-		width: 50%;
-		padding: 25px;
+		width: 120px;
+		padding: 10px;
 		border-radius: 50%;
-		border: solid 1px white;
+		background: var(--principal2);
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 	}
 
 	.servicios-separador{
@@ -485,7 +512,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		align-items: center;
 		justify-content: space-around;
 		height: 250px;
-		background-image: url("https://www.pozos-de-agua.com/wp-content/uploads/2017/12/background-24.jpg");
+		background: linear-gradient(to left, rgb(0, 0, 0), #0c0c0c, rgb(0, 0, 0));
 	}
 	.servicios-container-wrapp{
 		width: 100%;
@@ -507,10 +534,11 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 	.servicios-bx__img{
 		width: 30%;
 		background: none;
-		padding: 25px;
+		padding: 10px;
 		border-radius: 50%;
-		border: solid 2px white;
+		border: solid 2px black;
 		box-shadow: 0 0 3px white;
+		filter: invert(1);
 	}
 	.servicios-bx__txt{
 		display: flex;
@@ -545,7 +573,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		gap: 10px;
 	}
 	.galeria-title{
-		width: 80%;
+		width: 90%;
 		display: flex;
 		align-items: center;
 		justify-content: start;
@@ -570,7 +598,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: gray;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -579,7 +607,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: green;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -588,7 +616,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: yellow;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -597,7 +625,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: yellow;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -606,7 +634,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: yellow;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -615,7 +643,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: yellow;
+		background: #f1f1f1;
 		width: 100%;
 		height: 100%;
 	}
@@ -645,7 +673,8 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 
 	.location-section{
 		width: 100%;
-		height: 350px;
+		height: auto;
+		max-height: 350px;
 	}
 
 
@@ -798,7 +827,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		}
 
 		.servicios-section{
-			padding: 50px 0;
+			padding: 0;
 		}
 		.section-title, .galeria-title{
 			justify-content: center;
@@ -863,7 +892,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		.nosotros-seciton {
 			width: 100%;
 			height: auto;
-			background: var(--principal);
+			background: linear-gradient(to left, rgb(0, 0, 0), #0c0c0c, rgb(0, 0, 0));
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
@@ -947,7 +976,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		}
 		.servicios-bx__img{
 			width: 20%;
-			padding: 20px;
+			padding: 10px;
 		}
 
 		.galeria-grid{
