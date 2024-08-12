@@ -73,8 +73,8 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						<div class="form-bx">
 							<label for="service">Tipo de Servicio:</label>
 							<select id="service" name="service" required>
-								<option value="Perforación para bomba centrífuga">Perf. para bombas centrífuga</option>
-								<option value="Sumergidas">Perf. para bombas sumergible</option>
+								<option value="Perf. para bomba centrífuga">Perf. para bombas centrífuga</option>
+								<option value="Perf. para bomba sumergida">Perf. para bombas sumergible</option>
 								<option value="Reparaciones de perforación">Reparaciones de perf</option>
 								<option value="Reemplazo de bombas">Reemplazo de bombas</option>
 							</select>
@@ -171,7 +171,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						const message = `Hola, Mauricio. Mi nombre es ${encodeURIComponent(name)}, soy de la localidad de ${encodeURIComponent(city)}, mi dirección es ${encodeURIComponent(address)}, mi numero de celular ${encodeURIComponent(phone)} y estoy interesad@ en: ${encodeURIComponent(service)}`;
 
 						// Enlace para WhatsApp
-						const whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
+						const whatsappUrl = `https://api.whatsapp.com/send?phone=11622534930&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
 
 						// Redirigir al usuario a WhatsApp
 						window.location.href = whatsappUrl;
