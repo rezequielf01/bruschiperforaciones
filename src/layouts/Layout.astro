@@ -32,7 +32,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 
 		<Header/>
 
-			<a target="_blank" href="https://api.whatsapp.com/send/?phone=+541162253493&text=¡Hola, Mauricio. Estoy interesado en hacer una perforación!&type=phone_number&app_absent=0" id="wsp-float-btn" title="Whatsapp">
+			<a target="_blank" href="https://api.whatsapp.com/send/?phone=+541162253493&text=¡Hola, Mauricio. Estoy interesad@ en tus servicios!&type=phone_number&app_absent=0" id="wsp-float-btn" title="Whatsapp">
 				<ion-icon name="logo-whatsapp"></ion-icon>
 			</a>
 
@@ -168,7 +168,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						const service = (document.getElementById("service") as HTMLSelectElement | null)?.value || '';
 
 						// Construir el mensaje
-						const message = `Nombre: ${encodeURIComponent(name)}%0ATeléfono: ${encodeURIComponent(phone)}%0ADirección: ${encodeURIComponent(address)}%0ALocalidad: ${encodeURIComponent(city)}%0ATipo de Servicio: ${encodeURIComponent(service)}`;
+						const message = `Hola, Mauricio. Mi nombre es ${encodeURIComponent(name)}, soy de la localidad de ${encodeURIComponent(city)}, mi dirección es ${encodeURIComponent(address)}, mi numero de celular ${encodeURIComponent(phone)} y estoy interesad@ en: ${encodeURIComponent(service)}`;
 
 						// Enlace para WhatsApp
 						const whatsappUrl = `https://api.whatsapp.com/send?phone=2224463130&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
@@ -720,6 +720,20 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		max-height: 350px;
 	}
 
+	.anim-entrada{
+		animation-name: anim-entrada;
+		animation-duration: 3s;
+	}
+
+
+	@keyframes anim-entrada {
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
 
 
 	@media only screen and (max-width: 419px) {
@@ -788,6 +802,10 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 			flex-direction: column;
 			justify-content: flex-start;
 			gap: 25px;
+		}
+
+		.servicios-cards{
+			justify-content: center;
 		}
 
 		.servicios-bx{
@@ -880,6 +898,11 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 		.servicios__h2, .galeria-title__h2{
 			font-size: 1.5rem;
 		}
+
+		.servicios-cards{
+			justify-content: center;
+		}
+
 		.servicios-separador{
 			height: auto;
 			padding: 15px 0;
