@@ -171,7 +171,7 @@ const { title } = Astro.props; // → RECUPERA EL DATO Y LO LEE
 						const message = `Hola, Mauricio. Mi nombre es ${encodeURIComponent(name)}, soy de la localidad de ${encodeURIComponent(city)}, mi dirección es ${encodeURIComponent(address)}, mi numero de celular ${encodeURIComponent(phone)} y estoy interesad@ en: ${encodeURIComponent(service)}`;
 
 						// Enlace para WhatsApp
-						const whatsappUrl = `https://api.whatsapp.com/send?phone=+541162253493&text=${message}`; // Reemplaza 1234567890 con el número de teléfono
+						const whatsappUrl = `https://api.whatsapp.com/send?phone=+541162253493&text=${message}`; 
 
 						// Redirigir al usuario a WhatsApp
 						window.location.href = whatsappUrl;
